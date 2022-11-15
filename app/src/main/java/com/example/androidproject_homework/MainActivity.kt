@@ -1,12 +1,12 @@
 package com.example.androidproject_homework
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -18,11 +18,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-    val goToActivity2 = Intent(this, MainActivity2::class.java)
 
         when (item.itemId) {
-            R.id.goAct2 -> startActivity(goToActivity2)
+            R.id.goAct2 -> MainActivity2.startActivity2(this,
+                getString(R.string.first_str),
+                getString(R.string.second_str))
             R.id.close -> finishAffinity()
+            R.id.goBack -> onBackPressed()
         }
         return super.onOptionsItemSelected(item)
     }
