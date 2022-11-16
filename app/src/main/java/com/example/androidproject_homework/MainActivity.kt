@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import com.example.androidproject_homework.MainActivity2.Companion.refactorMainActivityToolBar
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,11 +21,17 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         when (item.itemId) {
-            R.id.goAct2 -> MainActivity2.startActivity2(this,
+            R.id.goAct2 -> MainActivity2.startActivity2(
+                this,
                 getString(R.string.first_str),
-                getString(R.string.second_str))
-            R.id.close -> finishAffinity()
+                getString(R.string.second_str)
+            )
+            R.id.sendText -> refactorMainActivityToolBar(
+                this,
+                getString(R.string.second_item)
+            )
             R.id.goBack -> onBackPressed()
+            R.id.close -> finishAffinity()
         }
         return super.onOptionsItemSelected(item)
     }

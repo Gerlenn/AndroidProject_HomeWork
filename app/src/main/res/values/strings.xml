@@ -1,9 +1,7 @@
 <resources>
     <string name="app_name">AndroidProject_HomeWork</string>
-    <string name="click_me">Click me</string>
     <string name="hello_world">Hello World!!!</string>
     <string name="mainActivity2">This is mainActivity2</string>
-    <string name="mainActivity3">This is mainActivity3</string>
     <string name="go_to_activity_2">Go to Activity 2</string>
     <string name="send_text">Send text</string>
     <string name="close_the_app">Close the app</string>
@@ -12,5 +10,7 @@
     <string name="first_str">This text is from the first activity</string>
     <string name="second_str">Hello from the first activity</string>
     <string name="HW17">HomeWork17</string>
-
+    <string name="no_data">no data: "MainActivity2"</string>
+    <string name="second_item">Second item clicked</string>
+    <string name="hello_this_is_my_app">Hello, this is my app! Click on the menu…</string>
 </resources>

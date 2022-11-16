@@ -7,9 +7,9 @@
         android:id="@+id/sendText"
         android:title="@string/send_text"/>
     <item
-        android:id="@+id/close"
-        android:title="@string/close_the_app"/>
-    <item
         android:id="@+id/goBack"
         android:title="@string/go_to_previous_activity"/>
+    <item
+        android:id="@+id/close"
+        android:title="@string/close_the_app"/>
 </menu>
