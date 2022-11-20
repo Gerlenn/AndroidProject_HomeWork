@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">AndroidProject_HomeWork</string>
+    <string name="my_registration">My registration</string>
+    <string name="enter">Enter</string>
+    <string name="password">Password</string>
+    <string name="your_name">enter your name*</string>
+    <string name="name">Name</string>
+    <string name="info">Information</string>
+    <string name="btn_pos_ok">OK</string>
+    <string name="pos_message">login completed</string>
+    <string name="btn_negative">Cancel</string>
+    <string name="errorName">invalid name</string>
+    <string name="errorPassword">invalid password</string>
 </resources>

@@ -4,15 +4,109 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <!--name-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutName"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="208dp"
+        android:layout_marginEnd="32dp"
+        android:hint="@string/name"
+        android:textColorHint="@color/bk_text"
+        app:boxStrokeColor="@color/boxStrokeColorHint"
+        app:counterEnabled="true"
+        app:counterMaxLength="20"
+        app:counterTextColor="@color/bk_text"
+        app:endIconMode="clear_text"
+        app:endIconTint="@color/bk_text"
+        app:helperText="@string/your_name"
+        app:helperTextTextColor="@color/bk_text"
+        app:hintTextColor="@color/bk_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:startIconDrawable="@drawable/ic_person"
+        app:startIconTint="@color/bk_text">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!--password-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutPassword"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="324dp"
+        android:layout_marginEnd="32dp"
+        android:hint="@string/password"
+        android:textColorHint="@color/bk_text"
+        app:boxStrokeColor="@color/boxStrokeColorHint"
+        app:counterEnabled="true"
+        app:counterMaxLength="20"
+        app:counterTextColor="@color/bk_text"
+        app:endIconMode="password_toggle"
+        app:endIconTint="@color/bk_text"
+        app:helperText="enter your password*"
+        app:helperTextTextColor="@color/bk_text"
+        app:hintTextColor="@color/bk_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:startIconDrawable="@drawable/ic_lock"
+        app:startIconTint="@color/bk_text">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!--TV-->
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvText"
+        android:layout_width="356dp"
+        android:layout_height="119dp"
+        android:fontFamily="@font/rhythm"
+        android:gravity="center"
+        android:text="@string/my_registration"
+        android:textSize="50sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.09" />
+
+    <!--Button-->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnEnter"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:fontFamily="@font/gogono"
+        android:text="@string/enter"
+        android:textColor="@color/bk_text"
+        android:textSize="20sp"
+        android:textStyle="italic"
+        app:cornerRadius="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvText"
+        app:layout_constraintVertical_bias="0.573" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

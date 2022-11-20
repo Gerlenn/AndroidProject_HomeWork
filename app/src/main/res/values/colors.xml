@@ -7,4 +7,12 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="hint">#9AFFFEFE</color>
+    <color name="et">#08FFFFFF</color>
+    <color name="bk_text">#A1021532</color>
+    <color name="boxStrokeColorHint">#41FFFFFF</color>
+
+
+
+
 </resources>
