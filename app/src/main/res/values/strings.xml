@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">AndroidProject_HomeWork</string>
+    <string name="app_name">HomeWork20</string>
+    <string name="error_login">invalid login</string>
+    <string name="error_password">invalid password</string>
+    <string name="error_email">invalid email</string>
+    <string name="invalid_pas">passwords don\'t match</string>
 </resources>
