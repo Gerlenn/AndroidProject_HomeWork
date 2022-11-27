@@ -43,15 +43,17 @@ class RegistrationFragment : Fragment() {
                 etPassword.error = getString(R.string.error_password)
             } else if (etPassword2.text.toString().isEmpty() || etPassword2.length() > 20) {
                 etPassword2.error = getString(R.string.error_password)
-            } else if (!etPassword.text.toString().equals(etPassword2.text.toString()) ) {
+            } else if (!etPassword.text.toString().equals(etPassword2.text.toString())) {
                 etPassword2.error = getString(R.string.invalid_pas)
-            } else if (!etMail.text.toString().isEmpty() && !etMail.text.toString().matches(emailPattern.toRegex())) {
+            } else if (!etMail.text.toString().isEmpty() && !etMail.text.toString()
+                    .matches(emailPattern.toRegex())
+            ) {
                 etMail.error = getString(R.string.invalid_pas)
             } else
                 parentFragmentManager
-                .beginTransaction()
-                .replace(R.id.activity_container, LoginFragment())
-                .commit()
+                    .beginTransaction()
+                    .replace(R.id.activity_container, LoginFragment())
+                    .commit()
         }
 
         goToHome.setOnClickListener {
@@ -61,9 +63,11 @@ class RegistrationFragment : Fragment() {
                 etPassword.error = getString(R.string.error_password)
             } else if (etPassword2.text.toString().isEmpty() || etPassword2.length() > 20) {
                 etPassword2.error = getString(R.string.error_password)
-            } else if (!etPassword.text.toString().equals(etPassword2.text.toString()) ) {
+            } else if (!etPassword.text.toString().equals(etPassword2.text.toString())) {
                 etPassword2.error = getString(R.string.invalid_pas)
-            } else if (!etMail.text.toString().isEmpty() && !etMail.text.toString().matches(emailPattern.toRegex())) {
+            } else if (!etMail.text.toString().isEmpty() && !etMail.text.toString()
+                    .matches(emailPattern.toRegex())
+            ) {
                 etMail.error = getString(R.string.invalid_pas)
             } else
                 parentFragmentManager

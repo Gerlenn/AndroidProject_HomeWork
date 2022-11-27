@@ -28,7 +28,7 @@ class LoginFragment : Fragment() {
         val etName = view.findViewById<EditText>(R.id.etName)
         val etPassword = view.findViewById<EditText>(R.id.etPassword)
 
-        val btn =view.findViewById<Button>(R.id.btnEnter)
+        val btn = view.findViewById<Button>(R.id.btnEnter)
 
         btn.setOnClickListener {
             if (etName.text.toString().isEmpty() || etName.length() > 20) {

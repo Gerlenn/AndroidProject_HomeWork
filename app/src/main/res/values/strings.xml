@@ -4,4 +4,9 @@
     <string name="error_password">invalid password</string>
     <string name="error_email">invalid email</string>
     <string name="invalid_pas">passwords don\'t match</string>
+    <string name="successfull">Successful transition!</string>
+    <string name="completed">Login\\registration completed successfully</string>
+    <string name="ok">OK</string>
+    <string name="negative_btn">Cancel</string>
+    <string name="wl">Welcome!!!</string>
 </resources>
