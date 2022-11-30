@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">HomeWork21</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="about_book1">The first novel in the Harry Potter series and Rowling\'s debut novel, it follows Harry Potter, a young wizard who discovers his magical heritage on his eleventh birthday.</string>
+    <string name="about_book2">The film stars Daniel Radcliffe as Harry Potter, with Rupert Grint and Emma Watson as his best friends Ron Weasley and Hermione Granger respectively.</string>
+    <string name="about_book3">Along with friends Ronald Weasley and Hermione Granger, Harry investigates Sirius Black, an escaped prisoner from Azkaban, the wizard prison, believed to be one of Lord Voldemort\'s old allies.</string>
+    <string name="about_book4">It follows Harry Potter, a wizard in his fourth year at Hogwarts School of Witchcraft and Wizardry, and the mystery surrounding the entry of Harry\'s name into the Triwizard Tournament, in which he is forced to compete.</string>
+    <string name="about_book5">The film stars Daniel Radcliffe as Harry Potter, alongside Rupert Grint and Emma Watson as Harry\'s best friends Ron Weasley and Hermione Granger. Its story follows Harry\'s fifth year at Hogwarts School of Witchcraft and Wizardry as the Ministry of Magic is in denial of Lord Voldemort\'s return.</string>
+    <string name="about_book6">Set during Harry Potter\'s sixth year at Hogwarts, the novel explores the past of the boy wizard\'s nemesis, Lord Voldemort, and Harry\'s preparations for the final battle against Voldemort alongside his headmaster and mentor Albus Dumbledore.</string>
+    <string name="about_book7">The novel chronicles the events directly following Harry Potter and the Half-Blood Prince (2005) and the final confrontation between the wizards Harry Potter and Lord Voldemort.</string>
 </resources>

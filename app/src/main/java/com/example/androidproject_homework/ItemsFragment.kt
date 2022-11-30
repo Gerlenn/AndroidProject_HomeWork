@@ -28,58 +28,60 @@ class ItemsFragment : Fragment(), itemListener {
 
         itemsAdapter = ItemsAdapter(this)
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView)
-        recyclerView.layoutManager = LinearLayoutManager(context)//requireContext() или requireActivity()
+        recyclerView.layoutManager =
+            LinearLayoutManager(context)
         recyclerView.adapter = itemsAdapter
 
         val listItems = listOf<ItemsModel>(
-            ItemsModel(R.drawable.a,
+            ItemsModel(
+                R.drawable.a,
                 R.drawable.ic_star,
-            "Гарри Поттер",
-            "и философский камень",
-            "1"
+                "Harry Potter\nand the Philosopher’s Stone",
+                getString(R.string.about_book1),
+                "1"
             ),
-            ItemsModel(R.drawable.b,
+            ItemsModel(
+                R.drawable.b,
                 R.drawable.ic_star,
-                "Гарри Поттер",
-                "и Тайная комната",
+                "Harry Potter\nand the Chamber of Secrets",
+                getString(R.string.about_book2),
                 "2"
             ),
-            ItemsModel(R.drawable.c,
+            ItemsModel(
+                R.drawable.c,
                 R.drawable.ic_star,
-                "Гарри Поттер",
-                "и узник Азкабана",
+                "Harry Potter\nand the Prisoner of Azkaban",
+                getString(R.string.about_book3),
                 "3"
             ),
-            ItemsModel(R.drawable.d,
+            ItemsModel(
+                R.drawable.d,
                 R.drawable.ic_star,
-                "Гарри Поттер",
-                "и Кубок огня",
+                "Harry Potter\nand the Goblet of Fire",
+                getString(R.string.about_book4),
                 "4"
             ),
-            ItemsModel(R.drawable.e,
+            ItemsModel(
+                R.drawable.e,
                 R.drawable.ic_star,
-                "Гарри Поттер",
-                "и Орден Феникса",
+                "Harry Potter\nand the Order of the Phoenix",
+                getString(R.string.about_book5),
                 "5"
             ),
-            ItemsModel(R.drawable.f,
+            ItemsModel(
+                R.drawable.f,
                 R.drawable.ic_star,
-                "Гарри Поттер",
-                "и Принц-полукровка",
+                "Harry Potter\nand the Half-Blood Prince",
+                getString(R.string.about_book6),
                 "6"
             ),
-            ItemsModel(R.drawable.g,
+            ItemsModel(
+                R.drawable.i,
                 R.drawable.ic_star,
-                "Гарри Поттер ",
-                "и Дары Смерти(Часть 1)",
+                "Harry Potter\nand the Deathly Hallows ",
+                getString(R.string.about_book7),
                 "7"
-            ),
-            ItemsModel(R.drawable.i,
-                R.drawable.ic_star,
-                "Гарри Поттер",
-                "и Дары Смерти",
-                "8"
-            ),
+            )
         )
         itemsAdapter.submitList(listItems)
     }
@@ -96,7 +98,7 @@ class ItemsFragment : Fragment(), itemListener {
         favoriteImage: Int
     ) {
 
-        val  detailsFragment = DetailsFragment()
+        val detailsFragment = DetailsFragment()
         val bundle = Bundle()
         bundle.putString("title", name)
         bundle.putString("about", about)
@@ -105,13 +107,9 @@ class ItemsFragment : Fragment(), itemListener {
         bundle.putInt("favoriteImage", favoriteImage)
         detailsFragment.arguments = bundle
 
-
-        // add метод мы больше не испульзуем, теперь мы будем использовать replace
-        //replace всегда будет иметь или addToBackstack, чтобы мы могли вернуться назад
         parentFragmentManager
             .beginTransaction()
             .replace(R.id.activity_container, detailsFragment)
-            //.add(R.id.activity_container, detailsFragment)
             .addToBackStack("Details")
             .commit()
     }
