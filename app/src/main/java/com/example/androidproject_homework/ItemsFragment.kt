@@ -14,7 +14,7 @@ import com.example.androidproject_homework.model.ItemsModel
 
 class ItemsFragment : Fragment(), itemListener {
 
-    private lateinit var itemsAdapter: ItemsAdapter // private var itemsAdapter: ItemsAdapter = ItemsAdapter() можно так но не нужно
+    private lateinit var itemsAdapter: ItemsAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,56 +38,56 @@ class ItemsFragment : Fragment(), itemListener {
                 R.drawable.ic_star,
                 "Harry Potter\nand the Philosopher’s Stone",
                 getString(R.string.about_book1),
-                "1"
+                ""
             ),
             ItemsModel(
                 R.drawable.b,
                 R.drawable.ic_star,
                 "Harry Potter\nand the Chamber of Secrets",
                 getString(R.string.about_book2),
-                "2"
+                ""
             ),
             ItemsModel(
                 R.drawable.c,
                 R.drawable.ic_star,
                 "Harry Potter\nand the Prisoner of Azkaban",
                 getString(R.string.about_book3),
-                "3"
+                ""
             ),
             ItemsModel(
                 R.drawable.d,
                 R.drawable.ic_star,
                 "Harry Potter\nand the Goblet of Fire",
                 getString(R.string.about_book4),
-                "4"
+                ""
             ),
             ItemsModel(
                 R.drawable.e,
                 R.drawable.ic_star,
                 "Harry Potter\nand the Order of the Phoenix",
                 getString(R.string.about_book5),
-                "5"
+                ""
             ),
             ItemsModel(
                 R.drawable.f,
                 R.drawable.ic_star,
                 "Harry Potter\nand the Half-Blood Prince",
                 getString(R.string.about_book6),
-                "6"
+                ""
             ),
             ItemsModel(
                 R.drawable.i,
                 R.drawable.ic_star,
                 "Harry Potter\nand the Deathly Hallows ",
                 getString(R.string.about_book7),
-                "7"
+                ""
             )
         )
         itemsAdapter.submitList(listItems)
     }
 
     override fun onClick() {
-        Toast.makeText(context, "ImageView clicked", Toast.LENGTH_SHORT).show()
+        Toast.makeText(context, getString(R.string.click), Toast.LENGTH_SHORT).show()
     }
 
     override fun onElementSelected(
@@ -95,7 +95,7 @@ class ItemsFragment : Fragment(), itemListener {
         about: String,
         time: String,
         image: Int,
-        favoriteImage: Int
+        favoriteImage: Int,
     ) {
 
         val detailsFragment = DetailsFragment()

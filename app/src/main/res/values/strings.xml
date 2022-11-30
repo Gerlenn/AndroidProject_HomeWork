@@ -8,4 +8,5 @@
     <string name="about_book5">The film stars Daniel Radcliffe as Harry Potter, alongside Rupert Grint and Emma Watson as Harry\'s best friends Ron Weasley and Hermione Granger. Its story follows Harry\'s fifth year at Hogwarts School of Witchcraft and Wizardry as the Ministry of Magic is in denial of Lord Voldemort\'s return.</string>
     <string name="about_book6">Set during Harry Potter\'s sixth year at Hogwarts, the novel explores the past of the boy wizard\'s nemesis, Lord Voldemort, and Harry\'s preparations for the final battle against Voldemort alongside his headmaster and mentor Albus Dumbledore.</string>
     <string name="about_book7">The novel chronicles the events directly following Harry Potter and the Half-Blood Prince (2005) and the final confrontation between the wizards Harry Potter and Lord Voldemort.</string>
+    <string name="click">ImageView clicked</string>
 </resources>

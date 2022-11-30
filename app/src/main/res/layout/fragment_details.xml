@@ -4,55 +4,62 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailsFragment">
+    tools:context=".DetailsFragment"
+    android:background="@drawable/itemsbk">
 
 
     <ImageView
         android:id="@+id/dtImage"
-        android:layout_width="156dp"
-        android:layout_height="184dp"
+        android:layout_width="198dp"
+        android:layout_height="290dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.145"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.404"
-        tools:src="@tools:sample/avatars" />
+        app:layout_constraintVertical_bias="0.355" />
 
     <TextView
         android:id="@+id/dtAbout"
-        android:layout_width="176dp"
-        android:layout_height="124dp"
+        android:layout_width="331dp"
+        android:layout_height="187dp"
         android:layout_marginTop="24dp"
-        android:text="TextView"
+        android:fontFamily="@font/harrypotter"
+        android:gravity="center"
+        android:textColor="#FFFFFF"
+        android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.285"
-        app:layout_constraintStart_toEndOf="@+id/dtImage"
-        app:layout_constraintTop_toBottomOf="@+id/dtTitle" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dtImage" />
 
     <TextView
         android:id="@+id/dtTitle"
-        android:layout_width="171dp"
-        android:layout_height="55dp"
-        android:text="TextView"
+        android:layout_width="match_parent"
+        android:layout_height="67dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:fontFamily="@font/harrypotter"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.255"
-        app:layout_constraintStart_toEndOf="@+id/dtImage"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.326" />
+        app:layout_constraintVertical_bias="0.024" />
 
     <TextView
         android:id="@+id/dtTime"
-        android:layout_width="308dp"
-        android:layout_height="25dp"
-        android:text="TextView"
+        android:layout_width="124dp"
+        android:layout_height="38dp"
+        android:gravity="right"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.93"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dtAbout"
-        app:layout_constraintVertical_bias="0.24" />
+        app:layout_constraintVertical_bias="0.448" />
 
     <ImageView
         android:id="@+id/dtFavoriteImage"
@@ -61,9 +68,28 @@
         android:src="@android:drawable/btn_star_big_on"
         app:layout_constraintBottom_toTopOf="@+id/dtImage"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.097"
+        app:layout_constraintHorizontal_bias="0.042"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.925" />
+        app:layout_constraintVertical_bias="0.152" />
+
+
+
+    <TextClock
+        android:id="@+id/textClock"
+        android:layout_width="121dp"
+        android:layout_height="47dp"
+        android:layout_centerHorizontal="true"
+        android:clickable="true"
+        android:format12Hour="hh:mm"
+        android:textSize="20sp"
+        android:textColor="#FFEC8A"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.068"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dtAbout"
+        app:layout_constraintVertical_bias="0.629" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,6 +9,6 @@ interface itemListener {
         date: String,
         imageView: String,
         image: Int,
-        favoriteImage: Int
+        favoriteImage: Int,
     )
 }
