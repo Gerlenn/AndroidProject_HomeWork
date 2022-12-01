@@ -62,7 +62,7 @@
         app:layout_constraintVertical_bias="0.448" />
 
     <ImageView
-        android:id="@+id/dtFavoriteImage"
+        android:id="@+id/favoriteImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@android:drawable/btn_star_big_on"

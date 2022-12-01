@@ -24,7 +24,7 @@ class DetailsFragment : Fragment() {
         val detailsAbout = view.findViewById<TextView>(R.id.dtAbout)
         val detailsTime = view.findViewById<TextView>(R.id.dtTime)
         val detailsImage = view.findViewById<ImageView>(R.id.dtImage)
-        val detailsFavoriteImage = view.findViewById<ImageView>(R.id.dtFavoriteImage)
+        val detailsFavoriteImage = view.findViewById<ImageView>(R.id.favoriteImage)
 
         val bundle = arguments
         bundle?.let { safeBundle ->
