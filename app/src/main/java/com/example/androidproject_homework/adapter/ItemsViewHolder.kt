@@ -27,6 +27,18 @@ class ItemsViewHolder(
         image.setBackgroundResource(itemsModel.image)
         favoriteImage.setBackgroundResource(itemsModel.favoriteImage)
 
+        var addFavoriteStar = true
+
+        favoriteImage.setOnClickListener {
+            if (addFavoriteStar) {
+                favoriteImage.setImageResource(R.drawable.ic_star)
+                addFavoriteStar = false
+            } else {
+                favoriteImage.setImageResource(R.drawable.ic_star_off)
+                addFavoriteStar = true
+            }
+        }
+
         image.setOnClickListener {
             itemsListener.onClick()
         }
