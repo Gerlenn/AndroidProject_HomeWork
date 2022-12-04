@@ -7,12 +7,11 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-
-const val KEY_TITLE = "title"
-const val KEY_ABOUT = "about"
-const val KEY_TIME = "time"
-const val KEY_IMAGE = "image"
-const val KEY_FAVORITE_IMAGE = "favoriteImage"
+import com.example.androidproject_homework.AppConstants.Companion.KEY_ABOUT
+import com.example.androidproject_homework.AppConstants.Companion.KEY_FAVORITE_IMAGE
+import com.example.androidproject_homework.AppConstants.Companion.KEY_IMAGE
+import com.example.androidproject_homework.AppConstants.Companion.KEY_TIME
+import com.example.androidproject_homework.AppConstants.Companion.KEY_TITLE
 
 class DetailsFragment : Fragment() {
 

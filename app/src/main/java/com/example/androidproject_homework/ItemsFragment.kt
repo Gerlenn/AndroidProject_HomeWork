@@ -10,6 +10,11 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.androidproject_homework.AppConstants.Companion.KEY_ABOUT
+import com.example.androidproject_homework.AppConstants.Companion.KEY_FAVORITE_IMAGE
+import com.example.androidproject_homework.AppConstants.Companion.KEY_IMAGE
+import com.example.androidproject_homework.AppConstants.Companion.KEY_TIME
+import com.example.androidproject_homework.AppConstants.Companion.KEY_TITLE
 import com.example.androidproject_homework.listener.adapter.ItemsAdapter
 import com.example.androidproject_homework.itemListener
 import com.example.androidproject_homework.model.ItemsModel
@@ -48,8 +53,8 @@ class ItemsFragment : Fragment(), itemListener {
 
             val detailsFragment = DetailsFragment()
             val bundle = Bundle()
-            bundle.putString(KEY_TITLE, navBundle.name)
-            bundle.putString(KEY_ABOUT, navBundle.about)
+            bundle.putInt(KEY_TITLE, navBundle.name)
+            bundle.putInt(KEY_ABOUT, navBundle.about)
             bundle.putString(KEY_TIME, navBundle.time)
             bundle.putInt(KEY_IMAGE, navBundle.image)
             bundle.putInt(KEY_FAVORITE_IMAGE, navBundle.favoriteImage)
@@ -68,7 +73,7 @@ class ItemsFragment : Fragment(), itemListener {
         viewModel.imageViewClicked()
     }
 
-    override fun onElementSelected(name: String, about: String, time: String, image: Int, favoriteImage: Int) {
+    override fun onElementSelected(name: Int, about: Int, time: String, image: Int, favoriteImage: Int) {
         viewModel.elementClicked(name, about, time, image, favoriteImage)
     }
 }

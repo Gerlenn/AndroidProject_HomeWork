@@ -3,6 +3,7 @@ package com.example.androidproject_homework
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.androidproject_homework.AppConstants.Companion.MSG
 import com.example.androidproject_homework.model.ItemsModel
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
@@ -24,50 +25,50 @@ class ItemsViewModel : ViewModel() {
             ItemsModel(
                 R.drawable.a,
                 R.drawable.ic_star,
-                "Harry Potter\nand the Philosopher’s Stone",
-                "book №1",
+                R.string.title1,
+                R.string.about_book1,
                 time
             ),
             ItemsModel(
                 R.drawable.b,
                 R.drawable.ic_star,
-                "Harry Potter\nand the Chamber of Secrets",
-                "book №2",
+                R.string.title2,
+                R.string.about_book2,
                 time
             ),
             ItemsModel(
                 R.drawable.c,
                 R.drawable.ic_star,
-                "Harry Potter\nand the Prisoner of Azkaban",
-                "book №3",
+                R.string.title3,
+                R.string.about_book3,
                 time
             ),
             ItemsModel(
                 R.drawable.d,
                 R.drawable.ic_star,
-                "Harry Potter\nand the Goblet of Fire",
-                "book №4",
+                R.string.title4,
+                R.string.about_book4,
                 time
             ),
             ItemsModel(
                 R.drawable.e,
                 R.drawable.ic_star,
-                "Harry Potter\nand the Order of the Phoenix",
-                "book №5",
+                R.string.title5,
+                R.string.about_book5,
                 time
             ),
             ItemsModel(
                 R.drawable.f,
                 R.drawable.ic_star,
-                "Harry Potter\nand the Half-Blood Prince",
-                "book №6",
+                R.string.title6,
+                R.string.about_book6,
                 time
             ),
             ItemsModel(
                 R.drawable.i,
                 R.drawable.ic_star,
-                "Harry Potter\nand the Deathly Hallows ",
-                "book №7",
+                R.string.title7,
+                R.string.about_book7,
                 time
             )
         )
@@ -75,10 +76,10 @@ class ItemsViewModel : ViewModel() {
     }
 
     fun imageViewClicked(){
-        _msg.value = "Avada kedavra!"
+        _msg.value = MSG
     }
 
-    fun elementClicked(name: String, about: String, time: String, image: Int, favoriteImage: Int){
+    fun elementClicked(name: Int, about: Int, time: String, image: Int, favoriteImage: Int){
         _bundle.value = NavigateWithBundle(
             name = name,
             about = about,
@@ -87,12 +88,11 @@ class ItemsViewModel : ViewModel() {
             favoriteImage = favoriteImage
         )
     }
-
 }
 
 data class NavigateWithBundle(
-    val name: String,
-    val about: String,
+    val name: Int,
+    val about: Int,
     val time: String,
     val image: Int,
     val favoriteImage: Int
