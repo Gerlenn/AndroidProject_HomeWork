@@ -1,4 +1,4 @@
-package com.example.androidproject_homework.listener
+package com.example.androidproject_homework
 
 interface itemListener {
 
@@ -6,8 +6,8 @@ interface itemListener {
 
     fun onElementSelected(
         name: String,
-        date: String,
-        imageView: String,
+        about: String,
+        time: String,
         image: Int,
         favoriteImage: Int,
     )

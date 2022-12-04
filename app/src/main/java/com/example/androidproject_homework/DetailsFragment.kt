@@ -8,6 +8,12 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 
+const val KEY_TITLE = "title"
+const val KEY_ABOUT = "about"
+const val KEY_TIME = "time"
+const val KEY_IMAGE = "image"
+const val KEY_FAVORITE_IMAGE = "favoriteImage"
+
 class DetailsFragment : Fragment() {
 
     override fun onCreateView(
@@ -29,11 +35,11 @@ class DetailsFragment : Fragment() {
         val bundle = arguments
         bundle?.let { safeBundle ->
 
-            val name = safeBundle.getString("title")
-            val about = safeBundle.getString("about")
-            val time = safeBundle.getString("time")
-            val image = safeBundle.getInt("image")
-            val favoriteImage = safeBundle.getInt("favoriteImage")
+            val name = safeBundle.getString(KEY_TITLE)
+            val about = safeBundle.getString(KEY_ABOUT)
+            val time = safeBundle.getString(KEY_TIME)
+            val image = safeBundle.getInt(KEY_IMAGE)
+            val favoriteImage = safeBundle.getInt(KEY_FAVORITE_IMAGE)
 
             detailsName.text = name
             detailsAbout.text = about

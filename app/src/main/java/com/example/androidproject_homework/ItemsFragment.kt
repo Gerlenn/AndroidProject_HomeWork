@@ -7,15 +7,17 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.androidproject_homework.adapter.ItemsAdapter
-import com.example.androidproject_homework.listener.itemListener
+import com.example.androidproject_homework.listener.adapter.ItemsAdapter
+import com.example.androidproject_homework.itemListener
 import com.example.androidproject_homework.model.ItemsModel
 
 class ItemsFragment : Fragment(), itemListener {
 
     private lateinit var itemsAdapter: ItemsAdapter
+    private val viewModel: ItemsViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,85 +35,40 @@ class ItemsFragment : Fragment(), itemListener {
             LinearLayoutManager(context)
         recyclerView.adapter = itemsAdapter
 
-        val listItems = listOf<ItemsModel>(
-            ItemsModel(
-                R.drawable.a,
-                R.drawable.ic_star,
-                "Harry Potter\nand the Philosopher’s Stone",
-                getString(R.string.about_book1),
-                ""
-            ),
-            ItemsModel(
-                R.drawable.b,
-                R.drawable.ic_star,
-                "Harry Potter\nand the Chamber of Secrets",
-                getString(R.string.about_book2),
-                ""
-            ),
-            ItemsModel(
-                R.drawable.c,
-                R.drawable.ic_star,
-                "Harry Potter\nand the Prisoner of Azkaban",
-                getString(R.string.about_book3),
-                ""
-            ),
-            ItemsModel(
-                R.drawable.d,
-                R.drawable.ic_star,
-                "Harry Potter\nand the Goblet of Fire",
-                getString(R.string.about_book4),
-                ""
-            ),
-            ItemsModel(
-                R.drawable.e,
-                R.drawable.ic_star,
-                "Harry Potter\nand the Order of the Phoenix",
-                getString(R.string.about_book5),
-                ""
-            ),
-            ItemsModel(
-                R.drawable.f,
-                R.drawable.ic_star,
-                "Harry Potter\nand the Half-Blood Prince",
-                getString(R.string.about_book6),
-                ""
-            ),
-            ItemsModel(
-                R.drawable.i,
-                R.drawable.ic_star,
-                "Harry Potter\nand the Deathly Hallows ",
-                getString(R.string.about_book7),
-                ""
-            )
-        )
-        itemsAdapter.submitList(listItems)
+        viewModel.getData()
+        viewModel.items.observe(viewLifecycleOwner){ listItems ->
+            itemsAdapter.submitList(listItems)
+        }
+
+        viewModel.msg.observe(viewLifecycleOwner){ msg ->
+            Toast.makeText(context, msg, Toast.LENGTH_SHORT).show()
+        }
+
+        viewModel.bundle.observe(viewLifecycleOwner){ navBundle->
+
+            val detailsFragment = DetailsFragment()
+            val bundle = Bundle()
+            bundle.putString(KEY_TITLE, navBundle.name)
+            bundle.putString(KEY_ABOUT, navBundle.about)
+            bundle.putString(KEY_TIME, navBundle.time)
+            bundle.putInt(KEY_IMAGE, navBundle.image)
+            bundle.putInt(KEY_FAVORITE_IMAGE, navBundle.favoriteImage)
+            detailsFragment.arguments = bundle
+
+            parentFragmentManager
+                .beginTransaction()
+                .replace(R.id.activity_container, detailsFragment)
+                .addToBackStack("Details")
+                .commit()
+        }
+
     }
 
     override fun onClick() {
-        Toast.makeText(context, getString(R.string.click), Toast.LENGTH_SHORT).show()
+        viewModel.imageViewClicked()
     }
 
-    override fun onElementSelected(
-        name: String,
-        about: String,
-        time: String,
-        image: Int,
-        favoriteImage: Int,
-    ) {
-
-        val detailsFragment = DetailsFragment()
-        val bundle = Bundle()
-        bundle.putString("title", name)
-        bundle.putString("about", about)
-        bundle.putString("time", time)
-        bundle.putInt("image", image)
-        bundle.putInt("favoriteImage", favoriteImage)
-        detailsFragment.arguments = bundle
-
-        parentFragmentManager
-            .beginTransaction()
-            .replace(R.id.activity_container, detailsFragment)
-            .addToBackStack("Details")
-            .commit()
+    override fun onElementSelected(name: String, about: String, time: String, image: Int, favoriteImage: Int) {
+        viewModel.elementClicked(name, about, time, image, favoriteImage)
     }
 }
