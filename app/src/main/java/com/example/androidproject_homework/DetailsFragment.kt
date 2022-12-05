@@ -34,14 +34,14 @@ class DetailsFragment : Fragment() {
         val bundle = arguments
         bundle?.let { safeBundle ->
 
-            val name = safeBundle.getString(KEY_TITLE)
-            val about = safeBundle.getString(KEY_ABOUT)
+            val name = safeBundle.getInt(KEY_TITLE)
+            val about = safeBundle.getInt(KEY_ABOUT)
             val time = safeBundle.getString(KEY_TIME)
             val image = safeBundle.getInt(KEY_IMAGE)
             val favoriteImage = safeBundle.getInt(KEY_FAVORITE_IMAGE)
 
-            detailsName.text = name
-            detailsAbout.text = about
+            detailsName.setText(name)
+            detailsAbout.setText(about)
             detailsTime.text = time
             detailsImage.setBackgroundResource(image)
             detailsFavoriteImage.setBackgroundResource(favoriteImage)
