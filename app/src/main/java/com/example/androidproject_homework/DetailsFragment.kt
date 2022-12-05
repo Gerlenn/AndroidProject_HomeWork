@@ -7,11 +7,11 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import com.example.androidproject_homework.AppConstants.Companion.KEY_ABOUT
-import com.example.androidproject_homework.AppConstants.Companion.KEY_FAVORITE_IMAGE
-import com.example.androidproject_homework.AppConstants.Companion.KEY_IMAGE
-import com.example.androidproject_homework.AppConstants.Companion.KEY_TIME
-import com.example.androidproject_homework.AppConstants.Companion.KEY_TITLE
+import com.example.androidproject_homework.AppConstants.KEY_ABOUT
+import com.example.androidproject_homework.AppConstants.KEY_FAVORITE_IMAGE
+import com.example.androidproject_homework.AppConstants.KEY_IMAGE
+import com.example.androidproject_homework.AppConstants.KEY_TIME
+import com.example.androidproject_homework.AppConstants.KEY_TITLE
 
 class DetailsFragment : Fragment() {
 

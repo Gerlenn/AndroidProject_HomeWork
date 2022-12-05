@@ -4,20 +4,17 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.androidproject_homework.AppConstants.Companion.KEY_ABOUT
-import com.example.androidproject_homework.AppConstants.Companion.KEY_FAVORITE_IMAGE
-import com.example.androidproject_homework.AppConstants.Companion.KEY_IMAGE
-import com.example.androidproject_homework.AppConstants.Companion.KEY_TIME
-import com.example.androidproject_homework.AppConstants.Companion.KEY_TITLE
+import com.example.androidproject_homework.AppConstants.KEY_ABOUT
+import com.example.androidproject_homework.AppConstants.KEY_FAVORITE_IMAGE
+import com.example.androidproject_homework.AppConstants.KEY_IMAGE
+import com.example.androidproject_homework.AppConstants.KEY_TIME
+import com.example.androidproject_homework.AppConstants.KEY_TITLE
 import com.example.androidproject_homework.listener.adapter.ItemsAdapter
-import com.example.androidproject_homework.itemListener
-import com.example.androidproject_homework.model.ItemsModel
 
 class ItemsFragment : Fragment(), itemListener {
 

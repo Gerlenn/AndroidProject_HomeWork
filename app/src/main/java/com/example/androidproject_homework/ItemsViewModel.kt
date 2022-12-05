@@ -3,7 +3,7 @@ package com.example.androidproject_homework
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.androidproject_homework.AppConstants.Companion.MSG
+import com.example.androidproject_homework.AppConstants.MSG
 import com.example.androidproject_homework.model.ItemsModel
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
