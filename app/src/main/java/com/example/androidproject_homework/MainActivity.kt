@@ -10,7 +10,7 @@ class MainActivity : AppCompatActivity() {
 
         val fragmentTransaction =
             supportFragmentManager.beginTransaction()//полезно для дз(вложенность)
-        fragmentTransaction.add(R.id.activity_container, ItemsFragment())
+        fragmentTransaction.add(R.id.activity_container, LoginFragment())
         fragmentTransaction.commit()
     }
 }

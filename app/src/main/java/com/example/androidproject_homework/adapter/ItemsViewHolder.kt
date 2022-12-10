@@ -21,8 +21,8 @@ class ItemsViewHolder(
         val favoriteImage = view.findViewById<ImageView>(R.id.favoriteImage)
 
 
-        name.text = itemsModel.name
-        about.text = itemsModel.about
+        name.setText(itemsModel.title)
+        about.setText(itemsModel.about)
         time.text = itemsModel.time
         image.setBackgroundResource(itemsModel.image)
         favoriteImage.setBackgroundResource(itemsModel.favoriteImage)
@@ -44,7 +44,7 @@ class ItemsViewHolder(
 
         itemView.setOnClickListener {
             itemsListener.onElementSelected(
-                itemsModel.name,
+                itemsModel.title,
                 itemsModel.about,
                 itemsModel.time,
                 itemsModel.image,
