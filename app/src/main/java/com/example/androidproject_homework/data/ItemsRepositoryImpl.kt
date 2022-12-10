@@ -1,10 +1,13 @@
-package com.example.androidproject_homework
+package com.example.androidproject_homework.data
 
+import com.example.androidproject_homework.R
+import com.example.androidproject_homework.domain.ItemsRepository
 import com.example.androidproject_homework.model.ItemsModel
+import com.example.androidproject_homework.presentation.view.time
 
-class ItemsPresenter(private val itemsView: ItemsView) {
+class ItemsRepositoryImpl: ItemsRepository{
 
-    fun getData() {
+    override fun getData(): List<ItemsModel> {
         val listItems = listOf<ItemsModel>(
             ItemsModel(
                 R.drawable.a,
@@ -56,14 +59,7 @@ class ItemsPresenter(private val itemsView: ItemsView) {
                 time
             )
         )
-        itemsView.dataReceived(listItems)
+        return listItems
     }
 
-    fun imageViewClicked() {
-        itemsView.imageViewClicked(R.string.click)
-    }
-
-    fun elementSelected(title: Int, about: Int, time: String, image: Int, favoriteImage: Int) {
-        itemsView.goToDetails(title, about, time, image, favoriteImage)
-    }
 }

@@ -1,7 +1,8 @@
-package com.example.androidproject_homework
+package com.example.androidproject_homework.presentation.view
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.androidproject_homework.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -9,7 +10,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val fragmentTransaction =
-            supportFragmentManager.beginTransaction()//полезно для дз(вложенность)
+            supportFragmentManager.beginTransaction()
         fragmentTransaction.add(R.id.activity_container, LoginFragment())
         fragmentTransaction.commit()
     }

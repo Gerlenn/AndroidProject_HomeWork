@@ -1,4 +1,4 @@
-package com.example.androidproject_homework
+package com.example.androidproject_homework.utils
 
 object AppConstants {
     const val TITLE = "title"

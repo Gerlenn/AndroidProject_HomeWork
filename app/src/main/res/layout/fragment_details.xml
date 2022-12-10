@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailsFragment"
+    tools:context=".presentation.view.DetailsFragment"
     android:background="@drawable/itemsbk">
 
 
@@ -62,10 +62,9 @@
         app:layout_constraintVertical_bias="0.448" />
 
     <ImageView
-        android:id="@+id/favoriteImage"
+        android:id="@+id/dtFavoriteImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@android:drawable/btn_star_big_on"
         app:layout_constraintBottom_toTopOf="@+id/dtImage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.042"

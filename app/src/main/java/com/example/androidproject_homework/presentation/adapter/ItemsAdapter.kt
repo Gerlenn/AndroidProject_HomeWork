@@ -1,10 +1,11 @@
-package com.example.androidproject_homework.adapter
+package com.example.androidproject_homework.presentation.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.androidproject_homework.R
-import com.example.androidproject_homework.listener.itemListener
+import com.example.androidproject_homework.databinding.ItemBookBinding
+import com.example.androidproject_homework.presentation.adapter.listener.itemListener
 import com.example.androidproject_homework.model.ItemsModel
 
 class ItemsAdapter(
@@ -18,8 +19,12 @@ class ItemsAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemsViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_book, parent, false)
-        return ItemsViewHolder(view, itemsListener)
+        val viewBinding = ItemBookBinding.inflate(
+            LayoutInflater.from(parent.context),
+            parent,
+            false
+        )
+        return ItemsViewHolder(viewBinding, itemsListener)
     }
 
     override fun onBindViewHolder(holder: ItemsViewHolder, position: Int) {
