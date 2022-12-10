@@ -9,8 +9,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val fragmentTransaction =
-            supportFragmentManager.beginTransaction()//полезно для дз(вложенность)
-        fragmentTransaction.add(R.id.activity_container, ItemsFragment())
+            supportFragmentManager.beginTransaction()
+        fragmentTransaction.add(R.id.activity_container, LoginFragment())
         fragmentTransaction.commit()
     }
 }

@@ -7,6 +7,11 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import com.example.androidproject_homework.AppConstants.ABOUT
+import com.example.androidproject_homework.AppConstants.FAV_IMAGE
+import com.example.androidproject_homework.AppConstants.IMAGE
+import com.example.androidproject_homework.AppConstants.TIME
+import com.example.androidproject_homework.AppConstants.TITLE
 
 class DetailsFragment : Fragment() {
 
@@ -29,14 +34,14 @@ class DetailsFragment : Fragment() {
         val bundle = arguments
         bundle?.let { safeBundle ->
 
-            val name = safeBundle.getString("title")
-            val about = safeBundle.getString("about")
-            val time = safeBundle.getString("time")
-            val image = safeBundle.getInt("image")
-            val favoriteImage = safeBundle.getInt("favoriteImage")
+            val name = safeBundle.getInt(TITLE)
+            val about = safeBundle.getInt(ABOUT)
+            val time = safeBundle.getString(TIME)
+            val image = safeBundle.getInt(IMAGE)
+            val favoriteImage = safeBundle.getInt(FAV_IMAGE)
 
-            detailsName.text = name
-            detailsAbout.text = about
+            detailsName.setText(name)
+            detailsAbout.setText(about)
             detailsTime.text = time
             detailsImage.setBackgroundResource(image)
             detailsFavoriteImage.setBackgroundResource(favoriteImage)

@@ -5,9 +5,9 @@ interface itemListener {
     fun onClick()
 
     fun onElementSelected(
-        name: String,
-        date: String,
-        imageView: String,
+        title: Int,
+        about: Int,
+        time: String,
         image: Int,
         favoriteImage: Int,
     )
