@@ -1,4 +1,4 @@
-package com.example.androidproject_homework
+package com.example.androidproject_homework.presentation.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,17 +9,28 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.androidproject_homework.AppConstants.ABOUT
-import com.example.androidproject_homework.AppConstants.FAV_IMAGE
-import com.example.androidproject_homework.AppConstants.IMAGE
-import com.example.androidproject_homework.AppConstants.TIME
-import com.example.androidproject_homework.AppConstants.TITLE
-import com.example.androidproject_homework.adapter.ItemsAdapter
-import com.example.androidproject_homework.listener.itemListener
+import com.example.androidproject_homework.utils.AppConstants.ABOUT
+import com.example.androidproject_homework.utils.AppConstants.FAV_IMAGE
+import com.example.androidproject_homework.utils.AppConstants.IMAGE
+import com.example.androidproject_homework.utils.AppConstants.TIME
+import com.example.androidproject_homework.utils.AppConstants.TITLE
+import com.example.androidproject_homework.R
+import com.example.androidproject_homework.data.ItemsRepositoryImpl
+import com.example.androidproject_homework.databinding.FragmentDetailsBinding
+import com.example.androidproject_homework.databinding.FragmentItemsBinding
+import com.example.androidproject_homework.databinding.FragmentLoginBinding
+import com.example.androidproject_homework.domain.ItemsInteractor
+import com.example.androidproject_homework.domain.ItemsRepository
+import com.example.androidproject_homework.presentation.adapter.ItemsAdapter
+import com.example.androidproject_homework.presentation.adapter.listener.itemListener
+import com.example.androidproject_homework.presentation.model.ItemsModel
 
 private const val NAVIGATE = "Details"
 
-class ItemsFragment : Fragment(), itemListener {
+class ItemsFragment : Fragment(), itemListener, ItemsRepository {
+
+    private var _viewBinding: FragmentItemsBinding? = null
+    private val viewBinding get() = _viewBinding!!
 
     private lateinit var itemsAdapter: ItemsAdapter
     private val viewModel: ItemsViewModel by viewModels()
@@ -27,18 +38,16 @@ class ItemsFragment : Fragment(), itemListener {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
-    ): View? {
-        return inflater.inflate(R.layout.fragment_items, container, false)
+    ): View {
+        _viewBinding = FragmentItemsBinding.inflate(inflater)
+        return viewBinding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         itemsAdapter = ItemsAdapter(this)
-        val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView)
-        recyclerView.layoutManager =
-            LinearLayoutManager(context)
-        recyclerView.adapter = itemsAdapter
+        viewBinding.recyclerView.adapter = itemsAdapter
 
         viewModel.getData()
         viewModel.items.observe(viewLifecycleOwner) { listItems ->
@@ -84,5 +93,9 @@ class ItemsFragment : Fragment(), itemListener {
         favoriteImage: Int,
     ) {
         viewModel.elementClicked(title, about, time, image, favoriteImage)
+    }
+
+    override fun getData(): List<ItemsModel> {
+        TODO("Not yet implemented")
     }
 }

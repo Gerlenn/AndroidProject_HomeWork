@@ -1,26 +1,15 @@
-package com.example.androidproject_homework
+package com.example.androidproject_homework.data
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import com.example.androidproject_homework.model.ItemsModel
+import com.example.androidproject_homework.R
+import com.example.androidproject_homework.domain.ItemsRepository
+import com.example.androidproject_homework.presentation.model.ItemsModel
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
-class ItemsViewModel: ViewModel() {
+class ItemsRepositoryImpl: ItemsRepository {
 
-    val time = LocalDateTime.now().format(DateTimeFormatter.ofPattern("HH:mm"))
-
-    private val _items = MutableLiveData<List<ItemsModel>>()
-    val items: LiveData<List<ItemsModel>> = _items
-
-    private val _msg = MutableLiveData<Int>()
-    val msg: LiveData<Int> = _msg
-
-    private val _bundle = MutableLiveData<NavigateWithBundle?>()
-    val bundle: LiveData<NavigateWithBundle?> = _bundle
-
-    fun getData(){
+    override fun getData(): List<ItemsModel> {
+        val time = LocalDateTime.now().format(DateTimeFormatter.ofPattern("HH:mm"))
         val listItems = listOf<ItemsModel>(
             ItemsModel(
                 R.drawable.a,
@@ -72,32 +61,6 @@ class ItemsViewModel: ViewModel() {
                 time
             )
         )
-        _items.value = listItems
-    }
-
-    fun imageViewClicked(){
-        _msg.value = R.string.click
-    }
-
-    fun elementClicked(title: Int, about: Int, time: String, image: Int, favoriteImage: Int){
-        _bundle.value = NavigateWithBundle(
-            title = title,
-            about = about,
-            time = time,
-            image = image,
-            favoriteImage = favoriteImage
-        )
-    }
-
-    fun userNavigated(){
-        _bundle.value = null
+        return listItems
     }
 }
-
-data class NavigateWithBundle(
-    val title: Int,
-    val about: Int,
-    val time: String,
-    val image: Int,
-    val favoriteImage: Int
-)

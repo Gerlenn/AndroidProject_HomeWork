@@ -1,7 +1,8 @@
-package com.example.androidproject_homework
+package com.example.androidproject_homework.presentation.view
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.androidproject_homework.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
