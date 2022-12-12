@@ -7,8 +7,6 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.androidproject_homework.utils.AppConstants.ABOUT
 import com.example.androidproject_homework.utils.AppConstants.FAV_IMAGE
 import com.example.androidproject_homework.utils.AppConstants.IMAGE
@@ -16,24 +14,21 @@ import com.example.androidproject_homework.utils.AppConstants.TIME
 import com.example.androidproject_homework.utils.AppConstants.TITLE
 import com.example.androidproject_homework.R
 import com.example.androidproject_homework.data.ItemsRepositoryImpl
-import com.example.androidproject_homework.databinding.FragmentDetailsBinding
 import com.example.androidproject_homework.databinding.FragmentItemsBinding
-import com.example.androidproject_homework.databinding.FragmentLoginBinding
 import com.example.androidproject_homework.domain.ItemsInteractor
-import com.example.androidproject_homework.domain.ItemsRepository
 import com.example.androidproject_homework.presentation.adapter.ItemsAdapter
 import com.example.androidproject_homework.presentation.adapter.listener.itemListener
-import com.example.androidproject_homework.presentation.model.ItemsModel
 
 private const val NAVIGATE = "Details"
 
-class ItemsFragment : Fragment(), itemListener, ItemsRepository {
+class ItemsFragment : Fragment(), itemListener {
 
     private var _viewBinding: FragmentItemsBinding? = null
     private val viewBinding get() = _viewBinding!!
 
     private lateinit var itemsAdapter: ItemsAdapter
-    private val viewModel: ItemsViewModel by viewModels()
+
+    private val viewModel: ItemsViewModel by viewModels { ViewModelFactory(ItemsInteractor(ItemsRepositoryImpl())) }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -93,9 +88,5 @@ class ItemsFragment : Fragment(), itemListener, ItemsRepository {
         favoriteImage: Int,
     ) {
         viewModel.elementClicked(title, about, time, image, favoriteImage)
-    }
-
-    override fun getData(): List<ItemsModel> {
-        TODO("Not yet implemented")
     }
 }
