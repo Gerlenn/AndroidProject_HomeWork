@@ -4,8 +4,9 @@ import com.example.androidproject_homework.R
 import com.example.androidproject_homework.domain.ItemsRepository
 import com.example.androidproject_homework.model.ItemsModel
 import com.example.androidproject_homework.presentation.view.time
+import javax.inject.Inject
 
-class ItemsRepositoryImpl: ItemsRepository{
+class ItemsRepositoryImpl @Inject constructor(): ItemsRepository{
 
     override fun getData(): List<ItemsModel> {
         val listItems = listOf<ItemsModel>(

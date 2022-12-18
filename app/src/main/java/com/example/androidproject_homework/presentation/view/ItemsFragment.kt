@@ -24,6 +24,7 @@ import com.example.androidproject_homework.model.ItemsModel
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
+
 private const val NAVIGATE = "Details"
 val time = LocalDateTime.now().format(DateTimeFormatter.ofPattern("HH:mm"))
 

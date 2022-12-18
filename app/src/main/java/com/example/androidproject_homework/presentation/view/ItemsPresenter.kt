@@ -2,9 +2,11 @@ package com.example.androidproject_homework.presentation.view
 
 import com.example.androidproject_homework.R
 import com.example.androidproject_homework.domain.ItemsInteractor
-import com.example.androidproject_homework.model.ItemsModel
+import dagger.Provides
+import javax.inject.Inject
 
-class ItemsPresenter(
+
+class ItemsPresenter @Inject constructor(
     private val itemsView: ItemsView,
     private val itemsInteractor: ItemsInteractor
     ) {

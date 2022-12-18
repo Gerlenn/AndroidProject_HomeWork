@@ -15,7 +15,9 @@ import com.example.androidproject_homework.utils.AppConstants.TITLE
 import com.example.androidproject_homework.R
 import com.example.androidproject_homework.databinding.FragmentDetailsBinding
 import com.example.androidproject_homework.databinding.FragmentItemsBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class DetailsFragment : Fragment() {
 
     private var _viewBinding: FragmentDetailsBinding? = null
