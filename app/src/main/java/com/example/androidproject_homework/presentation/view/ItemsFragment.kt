@@ -21,13 +21,15 @@ import com.example.androidproject_homework.domain.ItemsInteractor
 import com.example.androidproject_homework.presentation.adapter.ItemsAdapter
 import com.example.androidproject_homework.presentation.adapter.listener.itemListener
 import com.example.androidproject_homework.model.ItemsModel
+import dagger.hilt.android.AndroidEntryPoint
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
-
+import javax.inject.Inject
 
 private const val NAVIGATE = "Details"
 val time = LocalDateTime.now().format(DateTimeFormatter.ofPattern("HH:mm"))
 
+@AndroidEntryPoint
 class ItemsFragment : Fragment(), itemListener, ItemsView {
 
     private var _viewBinding: FragmentItemsBinding? = null
@@ -35,6 +37,7 @@ class ItemsFragment : Fragment(), itemListener, ItemsView {
 
     private lateinit var itemsAdapter: ItemsAdapter
 
+    @Inject
     lateinit var itemsPresenter: ItemsPresenter
 
     override fun onCreateView(
@@ -48,10 +51,11 @@ class ItemsFragment : Fragment(), itemListener, ItemsView {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        itemsPresenter = ItemsPresenter(this, ItemsInteractor(ItemsRepositoryImpl()))
+        itemsPresenter.setView(this)
 
         itemsAdapter = ItemsAdapter(this)
         viewBinding.recyclerView.adapter = itemsAdapter
+        viewBinding.recyclerView.layoutManager = LinearLayoutManager(context)
 
         itemsPresenter.getData()
     }
