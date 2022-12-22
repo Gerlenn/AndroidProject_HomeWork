@@ -1,4 +1,4 @@
-package com.example.androidproject_homework.presentation.view
+package com.example.androidproject_homework.presentation.view.home
 
 import com.example.androidproject_homework.model.ItemsModel
 

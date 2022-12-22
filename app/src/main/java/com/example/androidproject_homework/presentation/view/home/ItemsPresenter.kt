@@ -1,9 +1,7 @@
-package com.example.androidproject_homework.presentation.view
+package com.example.androidproject_homework.presentation.view.home
 
-import android.content.Context
 import com.example.androidproject_homework.R
-import com.example.androidproject_homework.domain.ItemsInteractor
-import dagger.Provides
+import com.example.androidproject_homework.domain.items.ItemsInteractor
 import javax.inject.Inject
 
 
