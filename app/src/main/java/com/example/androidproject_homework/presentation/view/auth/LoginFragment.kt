@@ -15,9 +15,6 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class LoginFragment : Fragment(), LoginView {
 
-    private var _binding: FragmentLoginBinding? = null
-    private val binding get() = _binding!!
-
     private var _viewBinding: FragmentLoginBinding? = null
     private val viewBinding get() = _viewBinding!!
 
@@ -35,6 +32,15 @@ class LoginFragment : Fragment(), LoginView {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        loginPresenter.setView(this)
+
+        viewBinding.btn2.setOnClickListener {
+            loginPresenter.loginUser(
+                viewBinding.etName.text.toString(),
+                viewBinding.etPassword.text.toString()
+            )
+        }
+
         viewBinding.btnEnter.setOnClickListener {
             if (viewBinding.etName.text.toString().isEmpty() || viewBinding.etName.length() > 20) {
                 viewBinding.etName.error = getString(R.string.inc_login)
@@ -50,17 +56,10 @@ class LoginFragment : Fragment(), LoginView {
         }
     }
 
-    override fun loginUser(userName: String, userPassword: String) {
-        loginPresenter.loginUser(
-            binding.etName.text.toString(),
-            binding.etPassword.text.toString()
-        )
-        binding.btn2.setOnClickListener {
+    override fun loginUser() {
             parentFragmentManager
                 .beginTransaction()
                 .replace(R.id.activity_container, OnBoardingFragment())
-                .addToBackStack("GO")
                 .commit()
-        }
     }
 }

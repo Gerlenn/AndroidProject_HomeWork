@@ -1,7 +1,7 @@
 package com.example.androidproject_homework.presentation.view.home
 
 import com.example.androidproject_homework.R
-import com.example.androidproject_homework.domain.items.ItemsInteractor
+import com.example.androidproject_homework.presentation.view.auth.domain.items.ItemsInteractor
 import javax.inject.Inject
 
 
