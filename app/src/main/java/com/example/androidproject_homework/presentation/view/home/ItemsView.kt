@@ -4,10 +4,10 @@ import com.example.androidproject_homework.model.ItemsModel
 
 interface ItemsView {
 
-    fun dataReceived(list: List<ItemsModel>)
+    fun itemsReceived(itemsList: List<ItemsModel>)
 
     fun imageViewClicked(msg: Int)
 
-    fun goToDetails(title: Int, about: Int, time: String, image: Int, favoriteImage: Int)
+    fun itemClicked(navigationData: NavigateWithBundle)
 
 }
