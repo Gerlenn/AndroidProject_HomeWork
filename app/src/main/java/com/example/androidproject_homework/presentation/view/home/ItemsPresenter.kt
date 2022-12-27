@@ -1,7 +1,7 @@
 package com.example.androidproject_homework.presentation.view.home
 
 import com.example.androidproject_homework.R
-import com.example.androidproject_homework.presentation.view.auth.domain.items.ItemsInteractor
+import com.example.androidproject_homework.domain.items.ItemsInteractor
 import javax.inject.Inject
 
 
@@ -9,20 +9,28 @@ class ItemsPresenter @Inject constructor(private val itemsInteractor: ItemsInter
 
     private lateinit var  itemsView: ItemsView
 
-    fun setView(context: ItemsView){
-        itemsView = context
+    fun setView(itemsFragment: ItemsFragment){
+        itemsView = itemsFragment
     }
 
-    fun getData() {
+    fun getItems() {
         val listItems = itemsInteractor.getData()
-        itemsView.dataReceived(listItems)
+        itemsView.itemsReceived(listItems)
     }
 
     fun imageViewClicked() {
         itemsView.imageViewClicked(R.string.click)
     }
 
-    fun elementSelected(title: Int, about: Int, time: String, image: Int, favoriteImage: Int) {
-        itemsView.goToDetails(title, about, time, image, favoriteImage)
+    fun itemClicked(title: Int, about: Int, time: String, image: Int, favoriteImage: Int) {
+        itemsView.itemClicked(NavigateWithBundle(title, about, time, image, favoriteImage))
     }
 }
+
+data class NavigateWithBundle(
+    val title: Int,
+    val about: Int,
+    val time: String,
+    val image: Int,
+    val favoriteImage: Int
+)

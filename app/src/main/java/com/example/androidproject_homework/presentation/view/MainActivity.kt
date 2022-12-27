@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.androidproject_homework.R
 import com.example.androidproject_homework.databinding.ActivityMainBinding
 import com.example.androidproject_homework.presentation.view.auth.LoginFragment
+import com.example.androidproject_homework.presentation.view.auth.OnBoardingFragment
+import com.example.androidproject_homework.presentation.view.auth.OnBoardingView
 import com.example.androidproject_homework.presentation.view.home.HomeFragment
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -34,7 +36,7 @@ class MainActivity : AppCompatActivity(), MainView {
         fragmentTransaction.add(
             R.id.activity_container,
             when (userExists) {
-                true -> HomeFragment()
+                true -> OnBoardingFragment()
                 false -> LoginFragment()
             }
         )

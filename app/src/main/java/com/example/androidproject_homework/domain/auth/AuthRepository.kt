@@ -1,4 +1,4 @@
-package com.example.androidproject_homework.presentation.view.auth.domain.auth
+package com.example.androidproject_homework.domain.auth
 
 import com.example.androidproject_homework.model.UserModel
 

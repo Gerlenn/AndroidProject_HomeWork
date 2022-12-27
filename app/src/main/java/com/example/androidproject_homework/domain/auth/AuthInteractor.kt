@@ -1,10 +1,11 @@
-package com.example.androidproject_homework.presentation.view.auth.domain.auth
+package com.example.androidproject_homework.domain.auth
 
 import com.example.androidproject_homework.model.UserModel
 import javax.inject.Inject
 
 class AuthInteractor @Inject constructor(
-    private val  authRepository: AuthRepository) {
+    private val  authRepository: AuthRepository
+) {
 
     fun loginUser(userName: String, userPassword: String) {
         authRepository.loginUser(userName, userPassword)

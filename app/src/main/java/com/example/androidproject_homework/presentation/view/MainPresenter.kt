@@ -1,7 +1,7 @@
 package com.example.androidproject_homework.presentation.view
 
 import com.example.androidproject_homework.databinding.ActivityMainBinding
-import com.example.androidproject_homework.presentation.view.auth.domain.auth.AuthInteractor
+import com.example.androidproject_homework.domain.auth.AuthInteractor
 import javax.inject.Inject
 
 class MainPresenter @Inject constructor(

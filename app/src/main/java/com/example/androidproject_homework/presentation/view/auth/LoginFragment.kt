@@ -7,8 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.androidproject_homework.R
 import com.example.androidproject_homework.databinding.FragmentLoginBinding
+import com.example.androidproject_homework.presentation.view.home.HomeFragment
 import com.example.androidproject_homework.presentation.view.home.ItemsFragment
-import com.example.androidproject_homework.presentation.view.home.LoginView
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -35,10 +35,18 @@ class LoginFragment : Fragment(), LoginView {
         loginPresenter.setView(this)
 
         viewBinding.btn2.setOnClickListener {
-            loginPresenter.loginUser(
-                viewBinding.etName.text.toString(),
-                viewBinding.etPassword.text.toString()
-            )
+            if (viewBinding.etName.text.toString().isEmpty() || viewBinding.etName.length() > 20) {
+                viewBinding.etName.error = getString(R.string.inc_login)
+            } else if (viewBinding.etPassword.text.toString()
+                    .isEmpty() || viewBinding.etPassword.length() > 20
+            ) {
+                viewBinding.etPassword.error = getString(R.string.inc_password)
+            } else {
+                loginPresenter.loginUser(
+                    viewBinding.etName.text.toString(),
+                    viewBinding.etPassword.text.toString()
+                )
+            }
         }
 
         viewBinding.btnEnter.setOnClickListener {
@@ -48,18 +56,19 @@ class LoginFragment : Fragment(), LoginView {
                     .isEmpty() || viewBinding.etPassword.length() > 20
             ) {
                 viewBinding.etPassword.error = getString(R.string.inc_password)
-            } else
+            } else {
                 parentFragmentManager
                     .beginTransaction()
                     .replace(R.id.activity_container, ItemsFragment())
                     .commit()
+            }
         }
     }
 
-    override fun loginUser() {
-            parentFragmentManager
-                .beginTransaction()
-                .replace(R.id.activity_container, OnBoardingFragment())
-                .commit()
+    override fun userLoggedIn() {
+        parentFragmentManager
+            .beginTransaction()
+            .replace(R.id.activity_container, OnBoardingFragment())
+            .commit()
     }
 }

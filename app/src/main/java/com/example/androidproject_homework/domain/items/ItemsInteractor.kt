@@ -1,4 +1,4 @@
-package com.example.androidproject_homework.presentation.view.auth.domain.items
+package com.example.androidproject_homework.domain.items
 
 import com.example.androidproject_homework.model.ItemsModel
 import javax.inject.Inject
