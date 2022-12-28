@@ -7,7 +7,6 @@
     tools:context=".presentation.view.home.DetailsFragment"
     android:background="@drawable/itemsbk">
 
-
     <ImageView
         android:id="@+id/dtImage"
         android:layout_width="198dp"
@@ -49,18 +48,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.024" />
 
-    <TextView
-        android:id="@+id/dtTime"
-        android:layout_width="124dp"
-        android:layout_height="38dp"
-        android:gravity="right"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.93"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dtAbout"
-        app:layout_constraintVertical_bias="0.448" />
-
     <ImageView
         android:id="@+id/dtFavoriteImage"
         android:layout_width="wrap_content"
@@ -72,10 +59,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.152" />
 
-
-
     <TextClock
-        android:id="@+id/textClock"
+        android:id="@+id/dtTime"
         android:layout_width="121dp"
         android:layout_height="47dp"
         android:layout_centerHorizontal="true"
@@ -89,6 +74,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dtAbout"
         app:layout_constraintVertical_bias="0.629" />
+
+    <Button
+        android:id="@+id/btn_logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#3EFF1744"
+        android:text="Logout"
+        app:cornerRadius="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.977"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.986" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

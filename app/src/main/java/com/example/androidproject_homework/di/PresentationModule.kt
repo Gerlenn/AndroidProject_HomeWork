@@ -5,6 +5,7 @@ import com.example.androidproject_homework.domain.items.ItemsInteractor
 import com.example.androidproject_homework.presentation.view.MainPresenter
 import com.example.androidproject_homework.presentation.view.auth.LoginPresenter
 import com.example.androidproject_homework.presentation.view.auth.OnBoardingPresenter
+import com.example.androidproject_homework.presentation.view.home.DetailsPresenter
 import com.example.androidproject_homework.presentation.view.home.ItemsPresenter
 import dagger.Module
 import dagger.Provides
@@ -33,5 +34,10 @@ class PresentationModule {
     @Provides
     fun provideItemsPresenter(itemsInteractor: ItemsInteractor): ItemsPresenter {
         return ItemsPresenter(itemsInteractor)
+    }
+
+    @Provides
+    fun provideDetailsPresenter(authInteractor: AuthInteractor): DetailsPresenter {
+        return DetailsPresenter(authInteractor)
     }
 }
