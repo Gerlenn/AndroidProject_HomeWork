@@ -4,7 +4,7 @@ import com.example.androidproject_homework.model.UserModel
 import javax.inject.Inject
 
 class AuthInteractor @Inject constructor(
-    private val  authRepository: AuthRepository
+    private val authRepository: AuthRepository,
 ) {
 
     fun loginUser(userName: String, userPassword: String) {
@@ -15,11 +15,11 @@ class AuthInteractor @Inject constructor(
         return authRepository.showUserCreds()
     }
 
-    fun checkUserExists(): Boolean{
+    fun checkUserExists(): Boolean {
         return authRepository.doesUserExist()
     }
 
-    fun logoutUser(){
+    fun logoutUser() {
         authRepository.userLogout()
     }
 }

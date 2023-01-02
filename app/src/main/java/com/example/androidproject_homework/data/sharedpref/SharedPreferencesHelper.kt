@@ -5,7 +5,7 @@ import com.example.androidproject_homework.model.UserModel
 import javax.inject.Inject
 
 class SharedPreferencesHelper @Inject constructor(
-    private val sharedPreferences: SharedPreferences
+    private val sharedPreferences: SharedPreferences,
 ) {
 
     fun saveUserName(name: String?) {
@@ -23,7 +23,7 @@ class SharedPreferencesHelper @Inject constructor(
     }
 
     fun checkUserExists(): Boolean {
-        val name = sharedPreferences.getString(USER_NAME, "") ?: ""
+        val name = sharedPreferences.getString(USER_NAME, "")
         val password = sharedPreferences.getString(USER_PASSWORD, "")
         return (!name.isNullOrEmpty() && !password.isNullOrEmpty())
     }

@@ -18,5 +18,6 @@
     <string name="click">Avada kedavra!</string>
     <string name="inc_login">Incorrect Login!</string>
     <string name="inc_password">Incorrect Password!</string>
-    <string name="go_to_onboarding">go</string>
+    <string name="go_to_items">go to items</string>
+    <string name="login_completed_successfully">Login completed successfully</string>
 </resources>
