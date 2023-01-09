@@ -31,7 +31,7 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewBinding.btn2.setOnClickListener {
+        viewModel.nav.observe(viewLifecycleOwner) {
             if (viewBinding.etName.text.toString().isEmpty() || viewBinding.etName.length() > 20) {
                 viewBinding.etName.error = getString(R.string.inc_login)
             } else if (viewBinding.etPassword.text.toString()
@@ -39,17 +39,10 @@ class LoginFragment : Fragment() {
             ) {
                 viewBinding.etPassword.error = getString(R.string.inc_password)
             } else {
-                viewModel.loginUser(
-                    viewBinding.etName.text.toString(),
-                    viewBinding.etPassword.text.toString()
-                )
+                parentFragmentManager.beginTransaction()
+                    .replace(R.id.activity_container, HomeFragment())
+                    .commit()
             }
-        }
-
-        viewModel.nav.observe(viewLifecycleOwner) {
-            parentFragmentManager.beginTransaction()
-                .replace(R.id.activity_container, HomeFragment())
-                .commit()
         }
 
         viewBinding.btnEnter.setOnClickListener {
@@ -65,6 +58,13 @@ class LoginFragment : Fragment() {
                     .replace(R.id.activity_container, ItemsFragment())
                     .commit()
             }
+        }
+
+        viewBinding.btn2.setOnClickListener{
+            viewModel.loginUser(
+                viewBinding.etName.text.toString(),
+                viewBinding.etPassword.text.toString()
+            )
         }
     }
 }
