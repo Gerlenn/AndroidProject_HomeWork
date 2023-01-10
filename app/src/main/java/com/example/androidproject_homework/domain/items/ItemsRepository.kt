@@ -4,5 +4,5 @@ import com.example.androidproject_homework.model.ItemsModel
 
 interface ItemsRepository {
 
-    fun getData(): List<ItemsModel>
+    suspend fun getData(): List<ItemsModel>
 }

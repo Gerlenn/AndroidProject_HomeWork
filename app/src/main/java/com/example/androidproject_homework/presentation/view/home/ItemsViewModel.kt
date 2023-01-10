@@ -1,12 +1,15 @@
 package com.example.androidproject_homework.presentation.view.home
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.androidproject_homework.R
 import com.example.androidproject_homework.domain.items.ItemsInteractor
 import com.example.androidproject_homework.model.ItemsModel
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
@@ -25,8 +28,14 @@ class ItemsViewModel @Inject constructor(
 
 
     fun getData() {
-        val listItems = itemsInteractor.getData()
-        _items.value = listItems
+        viewModelScope.launch {
+            try {
+                val listItems = itemsInteractor.getData()
+                _items.value = listItems
+            }catch (e: Exception){
+                Log.w("exception", "no data available")
+            }
+        }
     }
 
     fun imageViewClicked() {

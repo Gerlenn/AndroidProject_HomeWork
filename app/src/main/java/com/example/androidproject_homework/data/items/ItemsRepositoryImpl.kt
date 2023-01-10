@@ -8,7 +8,7 @@ import javax.inject.Inject
 
 class ItemsRepositoryImpl @Inject constructor() : ItemsRepository {
 
-    override fun getData(): List<ItemsModel> {
+    override suspend fun getData(): List<ItemsModel> {
         val listItems = listOf<ItemsModel>(
             ItemsModel(
                 R.drawable.a,
