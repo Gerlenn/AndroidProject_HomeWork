@@ -68,7 +68,7 @@ class LoginFragment : Fragment(), LoginView {
     override fun userLoggedIn() {
         parentFragmentManager
             .beginTransaction()
-            .replace(R.id.activity_container, OnBoardingFragment())
+            .replace(R.id.activity_container, HomeFragment())
             .commit()
     }
 }

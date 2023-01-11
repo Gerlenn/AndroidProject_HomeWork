@@ -3,6 +3,7 @@ package com.example.androidproject_homework.di
 import com.example.androidproject_homework.domain.auth.AuthInteractor
 import com.example.androidproject_homework.domain.items.ItemsInteractor
 import com.example.androidproject_homework.presentation.view.MainPresenter
+import com.example.androidproject_homework.presentation.view.home.HomePresenter
 import com.example.androidproject_homework.presentation.view.auth.LoginPresenter
 import com.example.androidproject_homework.presentation.view.auth.OnBoardingPresenter
 import com.example.androidproject_homework.presentation.view.home.DetailsPresenter
@@ -24,6 +25,11 @@ class PresentationModule {
     @Provides
     fun provideLoginPresenter(authInteractor: AuthInteractor): LoginPresenter {
         return LoginPresenter(authInteractor)
+    }
+
+    @Provides
+    fun provideHomePresenter(loginInteractor: AuthInteractor) : HomePresenter {
+        return HomePresenter(loginInteractor)
     }
 
     @Provides

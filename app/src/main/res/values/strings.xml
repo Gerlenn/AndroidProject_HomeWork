@@ -19,4 +19,5 @@
     <string name="inc_login">Incorrect Login!</string>
     <string name="inc_password">Incorrect Password!</string>
     <string name="go_to_onboarding">go</string>
+    <string name="home">Home</string>
 </resources>
