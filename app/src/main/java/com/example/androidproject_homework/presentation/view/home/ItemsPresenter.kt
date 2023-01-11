@@ -21,7 +21,7 @@ class ItemsPresenter @Inject constructor(private val itemsInteractor: ItemsInter
             Log.w("exceptionHandler called", exception.toString())
         }
 
-        CoroutineScope(Dispatchers.IO).launch(CoroutineName("with exception") + Dispatchers.Main + coroutineExceptionHandler){
+        CoroutineScope(Dispatchers.Main).launch(CoroutineName("with exception") + Dispatchers.Main + coroutineExceptionHandler){
             try {
                 val job = launch {
                     val listItems = itemsInteractor.getData()
