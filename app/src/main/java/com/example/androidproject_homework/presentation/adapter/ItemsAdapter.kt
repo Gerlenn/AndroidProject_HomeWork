@@ -16,8 +16,8 @@ class ItemsAdapter(
 
     fun submitList(list: List<ItemsModel>) {
         this.listItems.clear()
-        this.listItems = list.toMutableList()
         this.listItems.addAll(list.toMutableList())
+        this.notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemsViewHolder {
